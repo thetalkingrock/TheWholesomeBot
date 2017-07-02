@@ -21,3 +21,13 @@ t = praw.Reddit(client_id='',
                      password='',
                      user_agent='',
                      username='')
+
+while True:
+	#search for tweets from people having a bad day
+	result_tweets = api.search(q="I'm really sad right now", count=20)
+	#tweet out response to matching tweets
+	for tweet in result_tweets:
+		#check that each tweet was sent in the last 24 hours
+		if (datetime.datetime.now() - tweet.created_at).days < 1:
+            		print(tweet.text)
+            		user_name = tweet.user.screen_name
