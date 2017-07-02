@@ -31,3 +31,5 @@ while True:
 		if (datetime.datetime.now() - tweet.created_at).days < 1:
             		print(tweet.text)
             		user_name = tweet.user.screen_name
+			message = '@' + user_name + ' I hope things get better for you. '
+            		message += 'Looking at these always makes me happy. :) '
