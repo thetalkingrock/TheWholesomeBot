@@ -33,3 +33,10 @@ while True:
             		user_name = tweet.user.screen_name
 			message = '@' + user_name + ' I hope things get better for you. '
             		message += 'Looking at these always makes me happy. :) '
+			message += 'https://www.reddit.com/r/wholesomememes'
+			#tweets out response
+			tweet = api.update_status(message, tweet.id)
+			#wait five minutes between tweets
+			time.sleep(300)
+	 #wait 24 hours before sending out more tweets
+	 time.sleep(24 * 60 * 60)		
